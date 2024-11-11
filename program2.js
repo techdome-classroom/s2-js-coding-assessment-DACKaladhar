@@ -21,7 +21,7 @@ var romanToInt = function (s) {
     const char = s[i];
     const value = this.conversions[char];
 
-    if (value < prevValue) { // Must subtract in these cases
+    if (value < prevValue) { // Must subtract in these cases ex 
       total -= value;
     } else { // We can add
       total += value;

@@ -13,7 +13,23 @@ var romanToInt = function (s) {
     'M': 1000
   };
 
-  
+  let total = 0;
+  let prevValue = 0;
+
+  // Loop through the characters in reverse
+  for (let i = s.length - 1; i >= 0; i--) {
+    const char = s[i];
+    const value = this.conversions[char];
+
+    if (value < prevValue) { // Must subtract in these cases
+      total -= value;
+    } else { // We can add
+      total += value;
+    }
+    prevValue = value;
+  }
+
+  return total;
 };
 
 
